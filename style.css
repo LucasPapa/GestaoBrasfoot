@@ -1,0 +1,252 @@
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Para evitar rolagem horizontal */
+            color: #333;
+            background-color: #f0f0f5;
+        }
+
+        header {
+            background-color: #004080;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .tab-links {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .tab-links button {
+             padding: 15px;
+            flex: 1;
+            margin: 0 5px;
+            cursor: pointer;
+            border: none;
+            background-color: #004080;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .tab-links button.active {
+            background-color: #0066cc;
+        }
+        .tab-links button:hover {
+            background-color: #0050a0;
+        }
+        .tab-content {
+            display: none;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .tab-content h2, h3 {
+            text-align: center;
+            color: #004080;
+            margin-bottom: 20px;
+        }
+        .tab-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .tab-content th, .tab-content td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            font-size: 16px;
+        }
+        .tab-content th {
+            background-color: #004080;
+            color: white;
+        }
+        .tab-content td {
+            text-align: center;
+        }
+        .total-points {
+            font-size: 18px;
+            font-weight: bold;
+            color: #004080;
+            text-align: right;
+        }
+        .team-logo-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .team-logo {
+            max-width: 100%;
+            max-height: 200px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .pra-cima {
+            height: 20px;
+            width: 20px;
+            vertical-align: middle; /* Alinha verticalmente a imagem ao meio do texto */
+            margin-left: 5px; /* Adiciona um espaço entre o texto e a imagem */
+            display: inline;
+        }
+        .pra-baixo {
+            height: 20px;
+            width: 20px;
+            vertical-align: middle; /* Alinha verticalmente a imagem ao meio do texto */
+            margin-left: 5px; /* Adiciona um espaço entre o texto e a imagem */
+            display: inline;
+        }
+        
+        footer {
+            background-color: #004080;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 30px;
+            font-size: 14px;
+        }
+        /* Estilo para o modal de conquistas */
+    .modal {
+        display: none; /* Esconde o modal por padrão */
+        position: fixed; /* Fixa o modal na tela */
+        z-index: 1; /* Garante que o modal fique sobre outros elementos */
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+    }
+
+    .modal-content {
+        background-color: white;
+        margin: 15% auto; /* Centraliza o modal */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%; /* Largura do modal */
+        max-width: 1000px;
+        border-radius: 10px;
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .modal h2 {
+        text-align: center;
+        color: #004080;
+        margin-bottom: 20px;
+    }
+
+    .modal ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .modal ul li {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .modal ul li:last-child {
+        border-bottom: none;
+    }
+
+    .modal ul li img {
+        width: 50px;
+        height: auto;
+    }
+    /* Estilo da tabela */
+.historico-tabela {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.historico-tabela th,
+.historico-tabela td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.historico-tabela th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.historico-tabela .agregado {
+    font-weight: bold;
+    background-color: #e6e6e6;
+}
+
+.modal-tab{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+.modal-tab button {
+    padding: 15px;
+    flex: 1;
+    margin: 0 5px;
+    cursor: pointer;
+    border: none;
+    background-color: #004080;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+.modal-tab button.active {
+    background-color: #0066cc;
+}
+.modal-tab button:hover {
+    background-color: #0050a0;
+}
+.modal-tab-content {
+    display: none;
+}
+.historico {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.historico th,
+.historico td {
+    border: 1px solid #ddd;
+    padding: 5px;
+    text-align: center;
+}
+.historico th {
+    background-color: #004080;
+    color: white;
+}
+
+.historico td {
+    background-color: #f9f9f9;
+}

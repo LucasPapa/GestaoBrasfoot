@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão times Brasfoot</title>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+</head>
+<body>
+    <div class="tab-links" id="team-tabs">
+        <button data-tab="bagril" class="active">Bagril F.C</button>
+        <button data-tab="papete">Papete F.C</button>
+        <button data-tab="atlântico">C.R. Atlântico</button>
+        <button data-tab="mendes">Mendes Convention F.C</button>
+    </div>
+<!--//-------------------------------------------------------Bagril Futebol Clube-----------------------------------------//-->
+    <div id="bagril" class="tab-content" style="display: block;">
+        <h2>Bagril F.C</h2>
+        <div class="team-header">
+            <div>Total de Pontos: <span id="bagril-points" class="total-points">15</span></div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Atributo</th>
+                    <th>Máximo</th>
+                    <th>Pontos</th>
+                    <th>Final</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Tamanho do Estádio</td>
+                    <td>15.000</td>
+                    <td>
+                        <div class="radio-group">
+                            <label><input type="radio" name="estadio" value="1"> 1</label>
+                            <label><input type="radio" name="estadio" value="2"> 2</label>
+                            <label><input type="radio" name="estadio" value="3"> 3</label>
+                            <label><input type="radio" name="estadio" value="4"> 4</label>
+                            <label><input type="radio" name="estadio" value="5"> 5</label>
+                        </div>
+                    </td>
+                    <td class="final-value" id="bagril-estadio-final">0</td>
+                </tr>
+                <tr>
+                    <td>Quantidade de Jogadores na Base</td>
+                    <td>15</td>
+                    <td>
+                        <div class="radio-group">
+                            <label><input type="radio" name="base" value="1"> 1</label>
+                            <label><input type="radio" name="base" value="2"> 2</label>
+                            <label><input type="radio" name="base" value="3"> 3</label>
+                            <label><input type="radio" name="base" value="4"> 4</label>
+                            <label><input type="radio" name="base" value="5"> 5</label>
+                        </div>
+                    </td>
+                    <td class="final" id="bagril-base-final">0</td>
+                </tr>
+                <tr>
+                    <td>Quantidade de Jogadores Estrelas</td>
+                    <td>3</td>
+                    <td>
+                        <div class="radio-group">
+                            <label><input type="radio" name="estrelas" value="1"> 1</label>
+                            <label><input type="radio" name="estrelas" value="2"> 2</label>
+                            <label><input type="radio" name="estrelas" value="3"> 3</label>
+                        </div>
+                    </td>
+                    <td class="final" id="bagril-estrelas-final">0</td>
+                </tr>
+                <tr>
+                    <td>Nível do Time</td>
+                    <td>5</td>
+                    <td>
+                        <div class="radio-group">
+                            <label><input type="radio" name="nivel" value="1"> 1</label>
+                            <label><input type="radio" name="nivel" value="2"> 2</label>
+                            <label><input type="radio" name="nivel" value="3"> 3</label>
+                            <label><input type="radio" name="nivel" value="4"> 4</label>
+                            <label><input type="radio" name="nivel" value="5"> 5</label>
+                        </div>
+                    </td>
+                    <td class="final" id="bagril-nivel-final">0</td>
+                </tr>
+                <tr>
+                    <td>Quantidade de Scouts por Temporada</td>
+                    <td>5</td>
+                    <td>
+                        <div class="radio-group">
+                            <label><input type="radio" name="scout" value="1"> 1</label>
+                            <label><input type="radio" name="scout" value="2"> 2</label>
+                            <label><input type="radio" name="scout" value="3"> 3</label>
+                            <label><input type="radio" name="scout" value="4"> 4</label>
+                            <label><input type="radio" name="scout" value="5"> 5</label>
+                        </div>
+                    </td>
+                    <td class="final" id="bagril-scout-final">0</td>
+                </tr>
+                <tr>
+                    <td>Quantidade de Transferências por Temporada</td>
+                    <td>5</td>
+                    <td>
+                        <div class="radio-group">
+                            <label><input type="radio" name="transferencias" value="1"> 1</label>
+                            <label><input type="radio" name="transferencias" value="2"> 2</label>
+                            <label><input type="radio" name="transferencias" value="3"> 3</label>
+                            <label><input type="radio" name="transferencias" value="4"> 4</label>
+                            <label><input type="radio" name="transferencias" value="5"> 5</label>
+                        </div>
+                    </td>
+                    <td class="final" id="bagril-transferencias-final">0</td>
+                </tr>
+            </tbody>
+        </table>
+        <button id="bagril-modal-btn">Ver Conquistas</button>
+
+        <!-- O Modal -->
+        <div id="bagril-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Conquistas do Bagril F.C</h2>
+                <ul>
+                    <li>Campeão Paulista série A4 2023 <img src="tr_estadual_SP_d3.png" alt="Troféu"></li>
+                </ul>
+            </div>
+        </div>
+        <button id="bagril-retrospecto-modal-btn">Ver Retrospecto</button>
+
+<!-- Bagril Modal -->
+    <div id="bagril-retrospecto-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Retrospecto Bagril F.C</h2>
+    <table class="historico">
+        <thead>
+            <tr>
+                <th>Ano</th>
+                <th>Competição</th>
+                <th>Resultado</th>
+                <th>Jogos</th>
+                <th>Vitórias</th>
+                <th>Empates</th>
+                <th>Derrotas</th>
+                <th>Percentual de Vitória</th>
+                <th>Gols-Pró</th>
+                <th>Gols Sofridos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2025</td>
+                <td>Paulistão Série A3</td>
+                <td>Quartas</td>
+                <td>17</td>
+                <td>6</td>
+                <td>7</td>
+                <td>4</td>
+                <td>35,2%</td>
+                <td>23</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <td>2024</td>
+                <td>Paulistão Série A3</td>
+                <td>13° colocado</td>
+                <td>15</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>26,6%</td>
+                <td>25</td>
+                <td>24</td>
+            </tr>
+            <tr>
+                <td>2023</td>
+                <td>Paulistão Série A4</td>
+                <td>Campeão <img src="pra-cima.png" class="pra-cima"></td>
+                <td>21</td>
+                <td>15</td>
+                <td>2</td>
+                <td>4</td>
+                <td>71,4%</td>
+                <td>48</td>
+                <td>29</td>
+            </tr>
+        </tbody>
+    </table>
+        </div>
+    </div>
+
+        <div class="team-logo-container">
+            <img src="Bagril_FC.jpeg" alt="Bagril F.C" class="team-logo">
+        </div>
+        <div>
+            <h3>Presidente: Igor Franceschini</h2>
+        </div>
+    </div>
+<!--//-------------------------------------------------------Papete Futebol Clube----------------------------------------//-->
+    <div id="papete" class="tab-content">
+        <h2>Papete F.C</h2>
+        <div class="team-header">
+            <div>Total de Pontos: <span id="papete-points" class="total-points">15</span></div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Atributo</th>
+                    <th>Máximo</th>
+                    <th>Pontos</th>
+                    <th>Final</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Tamanho do Estádio</td>
+                    <td>15.000</td>
+                    <td>
+                        <div class="radio-group">
+                            <label><input type="radio" name="estadio" value="1"> 1</label>
+                            <label><input type="radio" name="estadio" value="2"> 2</label>
+                            <label><input type="radio" name="estadio" value="3"> 3</label>
+                            <label><input type="radio" name="estadio" value="4"> 4</label>
+                            <label><input type="radio" name="estadio" value="5"> 5</label>
+                        </div>
+                    </td>
+                    <td class="final" id="papete-estadio-final">0</td>
+                </tr>
+                <tr>
+                    <td>Quantidade de Jogadores na Base</td>
+                    <td>15</td>
+                    <td>
+                        <div class="radio-group">
+                            <label><input type="radio" name="base" value="1"> 1</label>
+                            <label><input type="radio" name="base" value="2"> 2</label>
+                            <label><input type="radio" name="base" value="3"> 3</label>
+                            <label><input type="radio" name="base" value="4"> 4</label>
+                            <label><input type="radio" name="base" value="5"> 5</label>
+                        </div>
+                    </td>
+                    <td class="final" id="papete-base-final">0</td>
+                </tr>
+                <tr>
+                    <td>Quantidade de Jogadores Estrelas</td>
+                    <td>3</td>
+                    <td>
+                        <div class="radio-group">
+                            <label><input type="radio" name="estrelas" value="1"> 1</label>
+                            <label><input type="radio" name="estrelas" value="2"> 2</label>
+                            <label><input type="radio" name="estrelas" value="3"> 3</label>
+                        </div>
+                    </td>
+                    <td class="final" id="papete-estrelas-final">0</td>
+                </tr>
+                <tr>
+                    <td>Nível do Time</td>
+                    <td>5</td>
+                    <td>
+                        <div class="radio-group">
+                            <label><input type="radio" name="nivel" value="1"> 1</label>
+                            <label><input type="radio" name="nivel" value="2"> 2</label>
+                            <label><input type="radio" name="nivel" value="3"> 3</label>
+                            <label><input type="radio" name="nivel" value="4"> 4</label>
+                            <label><input type="radio" name="nivel" value="5"> 5</label>
+                        </div>
+                    </td>
+                    <td class="final" id="papete-nivel-final">0</td>
+                </tr>
+                <tr>
+                    <td>Quantidade de Scouts por Temporada</td>
+                    <td>5</td>
+                    <td>
+                        <div class="radio-group">
+                            <label><input type="radio" name="scout" value="1"> 1</label>
+                            <label><input type="radio" name="scout" value="2"> 2</label>
+                            <label><input type="radio" name="scout" value="3"> 3</label>
+                            <label><input type="radio" name="scout" value="4"> 4</label>
+                            <label><input type="radio" name="scout" value="5"> 5</label>
+                        </div>
+                    </td>
+                    <td class="final" id="papete-scout-final">0</td>
+                </tr>
+                <tr>
+                    <td>Quantidade de Transferências por Temporada</td>
+                    <td>5</td>
+                    <td>
+                        <div class="radio-group">
+                            <label><input type="radio" name="transferencias" value="1"> 1</label>
+                            <label><input type="radio" name="transferencias" value="2"> 2</label>
+                            <label><input type="radio" name="transferencias" value="3"> 3</label>
+                            <label><input type="radio" name="transferencias" value="4"> 4</label>
+                            <label><input type="radio" name="transferencias" value="5"> 5</label>
+                        </div>
+                    </td>
+                    <td class="final" id="papete-transferencias-final">0</td>
+                </tr>
+            </tbody>
+        </table>
+        <button id="papete-modal-btn">Ver Conquistas</button>
+
+        <!-- O Modal -->
+        <div id="papete-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Conquistas do Papete F.C</h2>
+                <ul>
+                    <li>Campeão Paulista série A4 2025 <img src="tr_estadual_SP_d3.png" alt="Troféu"></li>
+                </ul>
+            </div>
+        </div>
+        <button id="papete-retrospecto-modal-btn">Ver Retrospecto</button>
+
+<!-- Papete Modal -->
+    <div id="papete-retrospecto-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Retrospecto Papete F.C</h2>
+    <table class="historico">
+        <thead>
+            <tr>
+                <th>Ano</th>
+                <th>Competição</th>
+                <th>Resultado</th>
+                <th>Jogos</th>
+                <th>Vitórias</th>
+                <th>Empates</th>
+                <th>Derrotas</th>
+                <th>Percentual de Vitória</th>
+                <th>Gols-Pró</th>
+                <th>Gols Sofridos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2025</td>
+                <td>Paulistão Série A4</td>
+                <td>Campeão <img src="pra-cima.png" class="pra-cima"></td>
+                <td>21</td>
+                <td>14</td>
+                <td>2</td>
+                <td>5</td>
+                <td>66,6%</td>
+                <td>39</td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <td>2024</td>
+                <td>Paulistão Série A4</td>
+                <td>Quartas</td>
+                <td>17</td>
+                <td>10</td>
+                <td>2</td>
+                <td>5</td>
+                <td>58,8%</td>
+                <td>28</td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <td>2023</td>
+                <td>Paulistão Série A4</td>
+                <td>11° colocado</td>
+                <td>15</td>
+                <td>6</td>
+                <td>2</td>
+                <td>7</td>
+                <td>40%</td>
+                <td>24</td>
+                <td>18</td>
+            </tr>
+        </tbody>
+    </table>
+        </div>
+    </div>
+
+        <div class="team-logo-container">
+            <img src="Papete_FC_2.jpeg" alt="Papete F.C" class="team-logo">
+        </div>
+        <div>
+            <h3>Presidente: Lucas Papa</h2>
+        </div>
+    </div>
+<!--//-------------------------------------------------------Clube de Regatas Atlântico----------------------------------------//-->
+    <div id="atlântico" class="tab-content">
+        <h2>C.R. Atlântico</h2>
+        <div class="team-header">
+            <div>Total de Pontos: <span id="atlântico-points" class="total-points">15</span></div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Atributo</th>
+                    <th>Máximo</th>
+                    <th>Pontos</th>
+                    <th>Final</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Tamanho do Estádio</td>
+                    <td>15.000</td>
+                    <td>
+                        <div class="radio-group">
+                            <label><input type="radio" name="estadio" value="1"> 1</label>
+                            <label><input type="radio" name="estadio" value="2"> 2</label>
+                            <label><input type="radio" name="estadio" value="3"> 3</label>
+                            <label><input type="radio" name="estadio" value="4"> 4</label>
+                            <label><input type="radio" name="estadio" value="5"> 5</label>
+                        </div>
+                    </td>
+                    <td class="final" id="atlântico-estadio-final">0</td>
+                </tr>
+                <tr>
+                    <td>Quantidade de Jogadores na Base</td>
+                    <td>15</td>
+                    <td>
+                        <div class="radio-group">
+                            <label><input type="radio" name="base" value="1"> 1</label>
+                            <label><input type="radio" name="base" value="2"> 2</label>
+                            <label><input type="radio" name="base" value="3"> 3</label>
+                            <label><input type="radio" name="base" value="4"> 4</label>
+                            <label><input type="radio" name="base" value="5"> 5</label>
+                        </div>
+                    </td>
+                    <td class="final" id="atlântico-base-final">0</td>
+                </tr>
+                <tr>
+                    <td>Quantidade de Jogadores Estrelas</td>
+                    <td>3</td>
+                    <td>
+                        <div class="radio-group">
+                            <label><input type="radio" name="estrelas" value="1"> 1</label>
+                            <label><input type="radio" name="estrelas" value="2"> 2</label>
+                            <label><input type="radio" name="estrelas" value="3"> 3</label>
+                        </div>
+                    </td>
+                    <td class="final" id="atlântico-estrelas-final">0</td>
+                </tr>
+                <tr>
+                    <td>Nível do Time</td>
+                    <td>5</td>
+                    <td>
+                        <div class="radio-group">
+                            <label><input type="radio" name="nivel" value="1"> 1</label>
+                            <label><input type="radio" name="nivel" value="2"> 2</label>
+                            <label><input type="radio" name="nivel" value="3"> 3</label>
+                            <label><input type="radio" name="nivel" value="4"> 4</label>
+                            <label><input type="radio" name="nivel" value="5"> 5</label>
+                        </div>
+                    </td>
+                    <td class="final" id="atlântico-nivel-final">0</td>
+                </tr>
+                <tr>
+                    <td>Quantidade de Scouts por Temporada</td>
+                    <td>5</td>
+                    <td>
+                        <div class="radio-group">
+                            <label><input type="radio" name="scout" value="1"> 1</label>
+                            <label><input type="radio" name="scout" value="2"> 2</label>
+                            <label><input type="radio" name="scout" value="3"> 3</label>
+                            <label><input type="radio" name="scout" value="4"> 4</label>
+                            <label><input type="radio" name="scout" value="5"> 5</label>
+                        </div>
+                    </td>
+                    <td class="final" id="atlântico-scout-final">0</td>
+                </tr>
+                <tr>
+                    <td>Quantidade de Transferências por Temporada</td>
+                    <td>5</td>
+                    <td>
+                        <div class="radio-group">
+                            <label><input type="radio" name="transferencias" value="1"> 1</label>
+                            <label><input type="radio" name="transferencias" value="2"> 2</label>
+                            <label><input type="radio" name="transferencias" value="3"> 3</label>
+                            <label><input type="radio" name="transferencias" value="4"> 4</label>
+                            <label><input type="radio" name="transferencias" value="5"> 5</label>
+                        </div>
+                    </td>
+                    <td class="final" id="atlântico-transferencias-final">0</td>
+                </tr>
+            </tbody>
+        </table>
+        <button id="atlantico-modal-btn">Ver Conquistas</button>
+
+        <!-- O Modal -->
+        <div id="atlantico-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Conquistas do C.R. Atlantico</h2>
+                <ul>
+                    <li>Campeão Paulista série A3 2025 <img src="tr_estadual_SP_d3.png" alt="Troféu"></li>
+                </ul>
+            </div>
+        </div>
+        <button id="atlantico-retrospecto-modal-btn">Ver Retrospecto</button>
+
+<!-- Atlantico Modal -->
+    <div id="atlantico-retrospecto-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Retrospecto C.R. Atlântico </h2>
+    <table class="historico">
+        <thead>
+            <tr>
+                <th>Ano</th>
+                <th>Competição</th>
+                <th>Resultado</th>
+                <th>Jogos</th>
+                <th>Vitórias</th>
+                <th>Empates</th>
+                <th>Derrotas</th>
+                <th>Percentual de Vitória</th>
+                <th>Gols-Pró</th>
+                <th>Gols Sofridos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2025</td>
+                <td>Paulistão Série A3</td>
+                <td>Campeão <img src="pra-cima.png" class="pra-cima"></td>
+                <td>21</td>
+                <td>13</td>
+                <td>4</td>
+                <td>4</td>
+                <td>61,9%</td>
+                <td>46</td>
+                <td>26</td>
+            </tr>
+            <tr>
+                <td>2024</td>
+                <td>Paulistão Série A4</td>
+                <td>Vice-Campeão <img src="pra-cima.png" class="pra-cima"></td>
+                <td>21</td>
+                <td>12</td>
+                <td>5</td>
+                <td>4</td>
+                <td>57,1%</td>
+                <td>42</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>2023</td>
+                <td>Paulistão Série A4</td>
+                <td>Quartas</td>
+                <td>17</td>
+                <td>9</td>
+                <td>2</td>
+                <td>6</td>
+                <td>52,9%</td>
+                <td>31</td>
+                <td>23</td>
+            </tr>
+            <!-- Adicione mais linhas conforme necessário -->
+        </tbody>
+    </table>
+        </div>
+    </div>
+        <div class="team-logo-container">
+            <img src="C.R.Atlantico.jpeg" alt="C.R.Atlantico" class="team-logo">
+        </div>
+        <div>
+            <h3>Presidente: João Naldinho</h2>
+        </div>
+    </div>
+<!--//-------------------------------------------------------Mendes Convention Futebol Clube----------------------------------------//-->
+    <div id="mendes" class="tab-content">
+        <h2>Mendes Convention F.C</h2>
+        <div class="team-header">
+        <div>Total de Pontos: <span id="mendes-points" class="total-points">15</span></div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Atributo</th>
+                    <th>Máximo</th>
+                    <th>Pontos</th>
+                    <th>Final</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Tamanho do Estádio</td>
+                    <td>15.000</td>
+                    <td>
+                        <div class="radio-group">
+                            <label><input type="radio" name="estadio" value="1"> 1</label>
+                            <label><input type="radio" name="estadio" value="2"> 2</label>
+                            <label><input type="radio" name="estadio" value="3"> 3</label>
+                            <label><input type="radio" name="estadio" value="4"> 4</label>
+                            <label><input type="radio" name="estadio" value="5"> 5</label>
+                        </div>
+                    </td>
+                    <td class="final" id="mendes-estadio-final">0</td>
+                </tr>
+                <tr>
+                    <td>Quantidade de Jogadores na Base</td>
+                    <td>15</td>
+                    <td>
+                        <div class="radio-group">
+                            <label><input type="radio" name="base" value="1"> 1</label>
+                            <label><input type="radio" name="base" value="2"> 2</label>
+                            <label><input type="radio" name="base" value="3"> 3</label>
+                            <label><input type="radio" name="base" value="4"> 4</label>
+                            <label><input type="radio" name="base" value="5"> 5</label>
+                        </div>
+                    </td>
+                    <td class="final" id="mendes-base-final">0</td>
+                </tr>
+                <tr>
+                    <td>Quantidade de Jogadores Estrelas</td>
+                    <td>3</td>
+                    <td>
+                        <div class="radio-group">
+                            <label><input type="radio" name="estrelas" value="1"> 1</label>
+                            <label><input type="radio" name="estrelas" value="2"> 2</label>
+                            <label><input type="radio" name="estrelas" value="3"> 3</label>
+                        </div>
+                    </td>
+                    <td class="final" id="mendes-estrelas-final">0</td>
+                </tr>
+                <tr>
+                    <td>Nível do Time</td>
+                    <td>5</td>
+                    <td>
+                        <div class="radio-group">
+                            <label><input type="radio" name="nivel" value="1"> 1</label>
+                            <label><input type="radio" name="nivel" value="2"> 2</label>
+                            <label><input type="radio" name="nivel" value="3"> 3</label>
+                            <label><input type="radio" name="nivel" value="4"> 4</label>
+                            <label><input type="radio" name="nivel" value="5"> 5</label>
+                        </div>
+                    </td>
+                    <td class="final" id="mendes-nivel-final">0</td>
+                </tr>
+                <tr>
+                    <td>Quantidade de Scouts por Temporada</td>
+                    <td>5</td>
+                    <td>
+                        <div class="radio-group">
+                            <label><input type="radio" name="scout" value="1"> 1</label>
+                            <label><input type="radio" name="scout" value="2"> 2</label>
+                            <label><input type="radio" name="scout" value="3"> 3</label>
+                            <label><input type="radio" name="scout" value="4"> 4</label>
+                            <label><input type="radio" name="scout" value="5"> 5</label>
+                        </div>
+                    </td>
+                    <td class="final" id="mendes-scout-final">0</td>
+                </tr>
+                <tr>
+                    <td>Quantidade de Transferências por Temporada</td>
+                    <td>5</td>
+                    <td>
+                        <div class="radio-group">
+                            <label><input type="radio" name="transferencias" value="1"> 1</label>
+                            <label><input type="radio" name="transferencias" value="2"> 2</label>
+                            <label><input type="radio" name="transferencias" value="3"> 3</label>
+                            <label><input type="radio" name="transferencias" value="4"> 4</label>
+                            <label><input type="radio" name="transferencias" value="5"> 5</label>
+                        </div>
+                    </td>
+                    <td class="final" id="mendes-transferencias-final">0</td>
+                </tr>
+            </tbody>
+        </table>
+        <button id="mendes-modal-btn">Ver Conquistas</button>
+
+
+        <!-- O Modal -->
+        <div id="mendes-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Conquistas do Mendes Convention F.C</h2>
+                <ul>
+                    <li>Campeão Paulista série A4 2024 <img src="tr_estadual_SP_d3.png" alt="Troféu"></li>
+                </ul>
+            </div>
+        </div>
+                <button id="mendes-retrospecto-modal-btn">Ver Retrospecto</button>
+
+<!-- Mendes Modal -->
+    <div id="mendes-retrospecto-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Retrospecto Mendes Convention F.C</h2>
+    <table class="historico">
+        <thead>
+            <tr>
+                <th>Ano</th>
+                <th>Competição</th>
+                <th>Resultado</th>
+                <th>Jogos</th>
+                <th>Vitórias</th>
+                <th>Empates</th>
+                <th>Derrotas</th>
+                <th>Percentual de Vitória</th>
+                <th>Gols-Pró</th>
+                <th>Gols Sofridos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2025</td>
+                <td>Paulistão Série A3</td>
+                <td>Vice-Campeão <img src="pra-cima.png" class="pra-cima"></td>
+                <td>21</td>
+                <td>14</td>
+                <td>3</td>
+                <td>4</td>
+                <td>66,6%</td>
+                <td>55</td>
+                <td>27</td>
+            </tr>
+            <tr>
+                <td>2024</td>
+                <td>Paulistão Série A4</td>
+                <td>Campeão <img src="pra-cima.png" class="pra-cima"></td>
+                <td>21</td>
+                <td>11</td>
+                <td>4</td>
+                <td>6</td>
+                <td>52,3%</td>
+                <td>37</td>
+                <td>23</td>
+            </tr>
+            <tr>
+                <td>2023</td>
+                <td>Paulistão Série A4</td>
+                <td>12° colocado</td>
+                <td>15</td>
+                <td>4</td>
+                <td>6</td>
+                <td>5</td>
+                <td>26,6%</td>
+                <td>25</td>
+                <td>24</td>
+            </tr>
+            <!-- Adicione mais linhas conforme necessário -->
+        </tbody>
+    </table>
+        </div>
+    </div>
+
+        <div class="team-logo-container">
+            <img src="MendesConvention_FC.jpeg" alt="Mendes Convention FC" class="team-logo">
+        </div>
+        <div>
+            <h3>Presidente: Lucas Mendes</h2>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 Lucas Papa. Todos os direitos reservados.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
